@@ -1,0 +1,50 @@
+problem statement : 
+	Scan a database, find a document missing for opening an account for example,
+	then reach out to the customer saying we are missing your Government Id, 
+	wait for it to be sent, potentially using OCR identify if it's the right document or not, 
+	and trigger the following action
+	
+step0:create user folder with his/her first name last name and dob
+step1: Import user gov document such as aadhar or PAN card in image or pdf format
+
+step2: extract user required information from image and pdf data using OCR Tesserct ,Opencv 
+
+step3: create a code to organize the user info in perticular format ie first name ,last name, DOB, Address for each document.
+		for each document create seperate python file. 
+		
+step4:create dataframe/dimension tables for each gov document with all the essential columns and 
+       write that dataframe/dimension tables into excel/postgress/txt etc
+
+step5: once we have all the dimension tables for each gov document, create a fact table which will have user information 
+       from all the dimension table.
+	   
+	   first create unique id column combining fistname lastname dob columns. eg:: jemsbond01012000
+	   
+	   check the unique column in all dimension tables and join all the tables with unique id, useing sequence matcher and fuzzy logic.
+	   
+	   then you will get final table with data from all the dimentional tables in one table, call it as fact table/final dataframe.
+	   
+	   create flag for each document column, if any document for that user is not present then assign 1 value else 0.
+	   
+step6: send the email to the user where flag value is 1 and request the perticular document.
+
+
+Important links:
+https://medium.com/nerd-for-tech/aadhaar-pan-info-extraction-using-python-ocr-5df81b6c66e3
+
+https://github.com/Lal4Tech/OCR-Identity-Cards/tree/master
+
+https://github.com/anujhsrsaini/Aadhar-OCR
+
+https://chatgpt.com/share/66fa4619-bc2c-8010-b496-6c48a54b2ec9
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+
+
+
